@@ -1,6 +1,11 @@
 [English](README.md) | [中文](README.zh.md) | [日本語](README.ja.md)  
-Fellow on X: [shareAI-Lab](https://x.com/baicai003)  
 # claw0
+
+<img width="260" src="https://github.com/user-attachments/assets/fe8b852b-97da-4061-a467-9694906b5edf" /><br>
+
+Scan with Wechat to fellow us,  
+or fellow on X: [shareAI-Lab](https://x.com/baicai003)  
+
 
 **From Zero to One: Build an AI Agent Gateway**
 
