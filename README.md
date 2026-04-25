@@ -103,7 +103,7 @@ s01 --> s02 --> s03 --> s04 --> s05
 
 ```sh
 # 1. Clone and enter
-git clone https://github.com/shareAI-lab/learn-harness-engineering-by-building-a-mini-openclaw.git && cd learn-harness-engineering-by-building-a-mini-openclaw
+git clone https://github.com/truongpx396/learn-harness-engineering-by-building-mini-openclaw && cd learn-harness-engineering-by-building-a-mini-openclaw
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -114,8 +114,6 @@ cp .env.example .env
 
 # 4. Run any section (pick your language)
 python sessions/en/s01_agent_loop.py    # English
-python sessions/zh/s01_agent_loop.py    # Chinese
-python sessions/ja/s01_agent_loop.py    # Japanese
 ```
 
 ## 🗺️ Learning Path
@@ -166,7 +164,6 @@ learn-harness-engineering-by-building-a-mini-openclaw/
     skills/example-skill/SKILL.md
 ```
 
-Each language folder is self-contained: runnable Python code + documentation side by side. Code logic is identical across languages; comments and docs differ.
 
 ## 📦 Prerequisites
 
