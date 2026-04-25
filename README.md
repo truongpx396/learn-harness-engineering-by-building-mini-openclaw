@@ -1,15 +1,45 @@
-[English](README.md) 
-# learn-harness-engineering-by-building-a-mini-openclaw
 
+# 🤖 Learn Harness Engineering by Building a Mini Openclaw
 
-**From Zero to One: Build an AI Agent Gateway**
+##  Table of Contents
+
+- [🔀 Origin & Modifications](#-origin--modifications)
+- [🤔 What is this?](#-what-is-this)
+- [🏗️ Architecture](#️-architecture)
+- [🔗 Section Dependencies](#-section-dependencies)
+- [⚡ Quick Start](#-quick-start)
+- [🗺️ Learning Path](#️-learning-path)
+- [📋 Section Details](#-section-details)
+- [📁 Repository Structure](#-repository-structure)
+- [📦 Prerequisites](#-prerequisites)
+- [🧩 Dependencies](#-dependencies)
+- [🔗 Related Projects](#-related-projects)
+- [👥 About](#-about)
+- [📄 License](#-license)
+
+---
+
+## 🔀 Origin & Modifications
+
+This repository is a fork of [shareAI-lab/claw0](https://github.com/shareAI-lab/claw0)
+
+Changes made in this fork:
+- 🔄 **SDK migration**: Migrated from the Anthropic SDK to the [OpenAI SDK](https://github.com/openai/openai-python), making all sections compatible with any OpenAI-compatible endpoint.
+- 🖥️ **Local model support**: Added setup guides for running fully offline with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and [GPT4All](https://www.nomic.ai/gpt4all) — no cloud API required.
+- ⚙️ **`.env`-based configuration**: Introduced `OPENAI_BASE_URL` and `MODEL_ID` environment variables so you can point any section at a different provider or local server without touching the code.
+
+All credit for the original curriculum, architecture, and teaching approach goes to [shareAI-lab](https://github.com/shareAI-lab).
+
+---
+
+🚀 **From Zero to One: Build an AI Agent Gateway**
 
 > 10 progressive sections -- every section is a single, runnable Python file.
 > code + docs co-located.
 
 ---
 
-## What is this?
+## 🤔 What is this?
 
 Most agent tutorials stop at "call an API once." This repository starts from that while loop and takes you all the way to a production-grade gateway.
 
@@ -28,10 +58,10 @@ s09: Resilience           -- 3-layer retry onion + auth profile rotation
 s10: Concurrency          -- Named lanes serialize the chaos
 ```
 
-## Architecture
+## 🏗️ Architecture
 
 ```
-+--- learn-harness-engineering-by-building-a-mini-openclaw layers ---+
++--- agent layers ---+
 |                                                     |
 |  s10: Concurrency  (named lanes, generation track)  |
 |  s09: Resilience   (auth rotation, overflow compact)|
@@ -47,7 +77,7 @@ s10: Concurrency          -- Named lanes serialize the chaos
 +-----------------------------------------------------+
 ```
 
-## Section Dependencies
+## 🔗 Section Dependencies
 
 ```
 s01 --> s02 --> s03 --> s04 --> s05
@@ -69,7 +99,7 @@ s01 --> s02 --> s03 --> s04 --> s05
 - s09: Builds on s03+s06 (reuses ContextGuard for overflow, model config)
 - s10: Builds on s07 (replaces single Lock with named lane system)
 
-## Quick Start
+## ⚡ Quick Start
 
 ```sh
 # 1. Clone and enter
@@ -88,7 +118,7 @@ python sessions/zh/s01_agent_loop.py    # Chinese
 python sessions/ja/s01_agent_loop.py    # Japanese
 ```
 
-## Learning Path
+## 🗺️ Learning Path
 
 Each section adds exactly one new concept. All prior code stays intact:
 
@@ -102,7 +132,7 @@ Phase 1: FOUNDATION     Phase 2: CONNECTIVITY     Phase 3: BRAIN        Phase 4:
  while + dispatch        persist + route            personality + recall  proactive + reliable  retry + serialize
 ```
 
-## Section Details
+## 📋 Section Details
 
 | # | Section | Core Concept | Lines |
 |---|---------|-------------|-------|
@@ -117,7 +147,7 @@ Phase 1: FOUNDATION     Phase 2: CONNECTIVITY     Phase 3: BRAIN        Phase 4:
 | 09 | Resilience | 3-layer retry onion: auth rotation, overflow compaction, tool-use loop | ~1130 |
 | 10 | Concurrency | Named lanes with FIFO queues, generation tracking, Future-based results | ~900 |
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```
 learn-harness-engineering-by-building-a-mini-openclaw/
@@ -138,7 +168,7 @@ learn-harness-engineering-by-building-a-mini-openclaw/
 
 Each language folder is self-contained: runnable Python code + documentation side by side. Code logic is identical across languages; comments and docs differ.
 
-## Prerequisites
+## 📦 Prerequisites
 
 - Python 3.11+
 - An OpenAI-compatible API key (e.g. GitHub Models, Azure OpenAI, or any provider)
@@ -234,7 +264,7 @@ python sessions/en/s01_agent_loop.py
 > - Keep context length at 4096 or lower in your server settings to reduce RAM pressure.
 > - The agents already cap `max_tokens` at 8096, so small models won't be overwhelmed.
 
-## Dependencies
+## 🧩 Dependencies
 
 ```
 openai>=1.0.0
@@ -245,16 +275,16 @@ python-telegram-bot>=21.0
 httpx>=0.27.0
 ```
 
-## Related Projects
+## 🔗 Related Projects
 
 - **[learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)** -- A companion teaching repo that builds an agent **framework** (nano Claude Code) from scratch in 12 progressive sessions. Where learn-harness-engineering-by-building-a-mini-openclaw focuses on gateway routing, channels, and proactive behavior, learn-claude-code dives deep into the agent's internal design: structured planning (TodoManager + nag), context compression (3-layer compact), file-based task persistence with dependency graphs, team coordination (JSONL mailboxes, shutdown/plan-approval FSM), autonomous self-organization, and git worktree isolation for parallel execution. If you want to understand how a production-grade unit agent works inside, start there.
 
-## About
+## 👥 About
 <img width="260" src="https://github.com/user-attachments/assets/fe8b852b-97da-4061-a467-9694906b5edf" /><br>
 
 Scan with Wechat to fellow us,  
 or fellow on X: [shareAI-Lab](https://x.com/baicai003)  
 
-## License
+## 📄 License
 
 MIT
