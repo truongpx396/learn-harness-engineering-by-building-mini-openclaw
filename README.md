@@ -103,17 +103,22 @@ s01 --> s02 --> s03 --> s04 --> s05
 
 ```sh
 # 1. Clone and enter
-git clone https://github.com/truongpx396/learn-harness-engineering-by-building-mini-openclaw && cd learn-harness-engineering-by-building-a-mini-openclaw
+git clone https://github.com/truongpx396/learn-harness-engineering-by-building-mini-openclaw && cd learn-harness-engineering-by-building-mini-openclaw
 
-# 2. Install dependencies
+# 2. Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate        # macOS / Linux
+# .venv\Scripts\activate         # Windows
+
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 3. Configure
+# 4. Configure
 cp .env.example .env
 # Edit .env: set OPENAI_API_KEY, MODEL_ID, and OPENAI_BASE_URL
 
-# 4. Run any section (pick your language)
-python sessions/en/s01_agent_loop.py    # English
+# 5. Run any section
+python sessions/en/s01_agent_loop.py
 ```
 
 ## 🗺️ Learning Path
